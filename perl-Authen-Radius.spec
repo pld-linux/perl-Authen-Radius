@@ -9,9 +9,9 @@ Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Authen/RadiusPerl-%{version}.tar.gz
-Requires:	perl-Digest-MD5
+Patch0:		%{name}-Digest-MD5.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
-BuildRequires:	perl >= 5.6
+BuildRequires:	perl-devel >= 5.6.1
 BuildRequires:	perl-Digest-MD5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -23,6 +23,7 @@ Authen-Radius - modu³ do autentykacji przy pomocy serwera RADIUS.
 
 %prep
 %setup -q -n RadiusPerl-%{version}
+%patch0 -p1
 
 %build
 perl Makefile.PL
@@ -30,9 +31,9 @@ perl Makefile.PL
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{perl_sitearch}/Authen
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{perl_sitearch}/Authen
 install Authen/Radius.pm $RPM_BUILD_ROOT%{perl_sitearch}/Authen
 
 gzip -9nf Changes README
