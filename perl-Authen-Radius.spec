@@ -35,12 +35,10 @@ install -d $RPM_BUILD_ROOT%{perl_sitearch}/Authen
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 install Authen/Radius.pm $RPM_BUILD_ROOT%{perl_sitearch}/Authen
 
-gzip -9nf Changes README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc Changes README
 %{perl_sitearch}/Authen/Radius.pm
