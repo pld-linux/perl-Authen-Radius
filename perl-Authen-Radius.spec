@@ -3,7 +3,7 @@ Summary:	Authen-TacacsPlus perl module
 Summary(pl):	Modu³ perla Authen-TacacsPlus
 Name:		perl-Authen-Radius
 Version:	0.05
-Release:	1
+Release:	2
 License:	Perl Artistic License
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
@@ -13,6 +13,7 @@ Patch0:		%{name}-Digest-MD5.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl-devel >= 5.6.1
 BuildRequires:	perl-Digest-MD5
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
