@@ -3,8 +3,8 @@
 %bcond_with	tests	# perform "make test" (requires Radius server availability)
 #
 %include	/usr/lib/rpm/macros.perl
-Summary:	Authen-TacacsPlus perl module
-Summary(pl):	Modu³ perla Authen-TacacsPlus
+Summary:	Authen::Radius - provide simple RADIUS client facilities
+Summary(pl):	Authen::Radius - udostêpnienie funkcji klienta RADIUS
 Name:		perl-Authen-Radius
 Version:	0.11
 Release:	1
@@ -21,10 +21,11 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Authen::Radius - module for authentication using RADIUS server.
+Authen::Radius is Perl module for authentication using RADIUS server.
 
 %description -l pl
-Authen::Radius - modu³ do autentykacji przy pomocy serwera RADIUS.
+Authen::Radius jest modu³em Perla do autentykacji przy pomocy serwera
+RADIUS.
 
 %prep
 %setup -q -n RadiusPerl-%{version}
