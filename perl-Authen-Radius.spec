@@ -6,7 +6,7 @@ Version:	0.05
 Release:	3
 License:	Perl Artistic License
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Authen/RadiusPerl-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Authen/RadiusPerl-%{version}.tar.gz
 Patch0:		%{name}-Digest-MD5.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl-devel >= 5.6.1
