@@ -3,15 +3,17 @@
 %bcond_with	tests	# perform "make test" (requires Radius server availability)
 #
 %include	/usr/lib/rpm/macros.perl
+%define		pdir	Authen
+%define		pnam	Radius
 Summary:	Authen::Radius - provide simple RADIUS client facilities
 Summary(pl):	Authen::Radius - udostêpnienie funkcji klienta RADIUS
-Name:		perl-Authen-Radius
-Version:	0.11
-Release:	2
+Name:		perl-%{pdir}-%{pnam}
+Version:	0.12
+Release:	1
 License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Authen/RadiusPerl-%{version}.tar.gz
-# Source0-md5:	5c320a936d5d3819220f2d639db007db
+# Source0-md5:	8427f931a4e0e689ecf8ddf30e5a0ea7
 # for dependency resolving
 BuildRequires:	perl-Data-HexDump
 BuildRequires:	perl-Digest-MD5
@@ -28,7 +30,7 @@ Authen::Radius jest modu³em Perla do autentykacji przy pomocy serwera
 RADIUS.
 
 %prep
-%setup -q -n RadiusPerl-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 %{__perl} Makefile.PL \
