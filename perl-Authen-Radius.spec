@@ -6,13 +6,12 @@
 Summary:	Authen-TacacsPlus perl module
 Summary(pl):	Modu³ perla Authen-TacacsPlus
 Name:		perl-Authen-Radius
-Version:	0.08
-Release:	2
+Version:	0.09
+Release:	1
 License:	Perl Artistic License
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Authen/RadiusPerl-%{version}.tar.gz
-# Source0-md5:	062cc2ed8d216ff219833a1670c87d3f
-Patch0:		%{name}-Digest-MD5.patch
+# Source0-md5:	1a43bd93d248e54dd259b0ca560f07f1
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-devel >= 5.6.1
 BuildRequires:	perl-Digest-MD5
@@ -29,7 +28,6 @@ Authen::Radius - modu³ do autentykacji przy pomocy serwera RADIUS.
 
 %prep
 %setup -q -n RadiusPerl-%{version}
-%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
@@ -41,15 +39,13 @@ Authen::Radius - modu³ do autentykacji przy pomocy serwera RADIUS.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{perl_vendorarch}/Authen
-
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
-install Authen/Radius.pm $RPM_BUILD_ROOT%{perl_vendorarch}/Authen
+make install DESTDIR=$RPM_BUILD_ROOT
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+#rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_vendorarch}/Authen/Radius.pm
+%{_mandir}/man3/*
+%{perl_vendorlib}/Authen/Radius.pm
