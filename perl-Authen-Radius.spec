@@ -6,12 +6,12 @@
 Summary:	Authen-TacacsPlus perl module
 Summary(pl):	Modu³ perla Authen-TacacsPlus
 Name:		perl-Authen-Radius
-Version:	0.09
+Version:	0.10
 Release:	1
 License:	Perl Artistic License
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Authen/RadiusPerl-%{version}.tar.gz
-# Source0-md5:	1a43bd93d248e54dd259b0ca560f07f1
+# Source0-md5:	a15c9e6c52ea2255ab83324e7b8abd94
 # for dependency resolving
 BuildRequires:	perl-Data-HexDump
 BuildRequires:	perl-Digest-MD5
