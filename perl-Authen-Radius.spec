@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _with_tests - perform "make test"
+# _with_tests - perform "make test" (requires Radius server availability)
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Authen-TacacsPlus perl module
@@ -12,11 +12,11 @@ License:	Perl Artistic License
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Authen/RadiusPerl-%{version}.tar.gz
 # Source0-md5:	1a43bd93d248e54dd259b0ca560f07f1
-BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl-devel >= 5.6.1
-BuildRequires:	perl-Digest-MD5
 # for dependency resolving
 BuildRequires:	perl-Data-HexDump
+BuildRequires:	perl-Digest-MD5
+BuildRequires:	perl-devel >= 5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,17 +32,18 @@ Authen::Radius - modu³ do autentykacji przy pomocy serwera RADIUS.
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
-%{__make} OPTIMIZE="%{rpmcflags}"
+%{__make}
 
-# tests require Radius server availability
 %{?_with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
-#rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
