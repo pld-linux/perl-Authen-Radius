@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _with_tests - perform "make test" (requires Radius server availability)
+%bcond_with	tests	# perform "make test" (requires Radius server availability)
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Authen-TacacsPlus perl module
@@ -34,7 +34,7 @@ Authen::Radius - modu³ do autentykacji przy pomocy serwera RADIUS.
 	INSTALLDIRS=vendor
 %{__make}
 
-%{?_with_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
