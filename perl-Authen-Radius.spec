@@ -25,7 +25,7 @@ Authen::Radius - modu³ do autentykacji przy pomocy serwera RADIUS.
 %patch0 -p1
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %install
