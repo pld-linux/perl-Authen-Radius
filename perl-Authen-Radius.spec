@@ -11,6 +11,7 @@ Release:	2
 License:	Perl Artistic License
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Authen/RadiusPerl-%{version}.tar.gz
+# Source0-md5:	062cc2ed8d216ff219833a1670c87d3f
 Patch0:		%{name}-Digest-MD5.patch
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-devel >= 5.6.1
