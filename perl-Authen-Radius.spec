@@ -15,8 +15,8 @@ Patch0:		%{name}-Digest-MD5.patch
 BuildRequires:	rpm-perlprov >= 4.0.2-104
 BuildRequires:	perl-devel >= 5.6.1
 BuildRequires:	perl-Digest-MD5
-%if %{!?_without_tests:1}0
-%endif
+# for dependency resolving
+BuildRequires:	perl-Data-HexDump
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
