@@ -1,13 +1,13 @@
---- RadiusPerl-0.05/Authen/Radius.pm~	Sun May 20 15:25:22 2001
-+++ RadiusPerl-0.05/Authen/Radius.pm	Sun May 20 15:26:03 2001
+--- RadiusPerl-0.08/Radius.pm~	Sun May 20 15:25:22 2001
++++ RadiusPerl-0.08/Radius.pm	Sun May 20 15:26:03 2001
 @@ -15,7 +15,7 @@
  use FileHandle;
  use IO::Socket;
  use IO::Select;
 -use MD5;
 +use Digest::MD5;
- 
- use vars qw($VERSION @ISA @EXPORT);
+ use Data::Dumper;
+ use Data::HexDump;
  
 @@ -188,7 +188,7 @@
  	$self->set_error;
@@ -39,10 +39,11 @@
 --- RadiusPerl-0.05/Makefile.PL~	Mon Mar 31 21:22:05 1997
 +++ RadiusPerl-0.05/Makefile.PL	Sun May 20 15:28:39 2001
 @@ -5,6 +5,6 @@
-     'NAME'			=> 'Authen::Radius',
-     'DISTNAME'		=> 'RadiusPerl',
-     'VERSION_FROM' 	=> 'Authen/Radius.pm', # finds $VERSION
--	'PREREQ_PM' 	=> { MD5 => 1.7, IO => 1.12 },
-+	'PREREQ_PM' 	=> { Digest::MD5 => 1.7, IO => 1.12 },
- 	'dist'			=> { COMPRESS => 'gzip', SUFFIX => 'gz' },
- );
+ 			  'NAME'	=> 'Authen::Radius',
+ 			  'VERSION_FROM' => 'Radius.pm', # finds $VERSION
+ 			  'PREREQ_PM' => {
+-							  'MD5' => 1.7,
++							  'Digest::MD5' => 1.7,
+							  'IO' => 1.12,
+							  'Data::Dumper' => 1,
+							  'Data::HexDump' => 0.02
