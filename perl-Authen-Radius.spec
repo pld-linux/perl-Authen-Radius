@@ -33,7 +33,7 @@ Authen::Radius - modu³ do autentykacji przy pomocy serwera RADIUS.
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor 
+	INSTALLDIRS=vendor
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 # tests require Radius server availability
