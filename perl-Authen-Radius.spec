@@ -15,10 +15,10 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Authen-Radius - module for authentication using RADIUS server.
+Authen::Radius - module for authentication using RADIUS server.
 
 %description -l pl
-Authen-Radius - modu³ do autentykacji przy pomocy serwera RADIUS.
+Authen::Radius - modu³ do autentykacji przy pomocy serwera RADIUS.
 
 %prep
 %setup -q -n RadiusPerl-%{version}
