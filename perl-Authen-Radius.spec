@@ -4,7 +4,7 @@ Summary(pl):	Modu³ perla Authen-TacacsPlus
 Name:		perl-Authen-Radius
 Version:	0.05
 Release:	1
-License:	GPL
+License:	Perl Artistic License
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
