@@ -1,0 +1,48 @@
+--- RadiusPerl-0.05/Authen/Radius.pm~	Sun May 20 15:25:22 2001
++++ RadiusPerl-0.05/Authen/Radius.pm	Sun May 20 15:26:03 2001
+@@ -15,7 +15,7 @@
+ use FileHandle;
+ use IO::Socket;
+ use IO::Select;
+-use MD5;
++use Digest::MD5;
+ 
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+@@ -188,7 +188,7 @@
+ 	$self->set_error;
+ 
+ 	$hdr = pack('C C n', $type, $id, $length);
+-	$ct = new MD5;
++	$ct = new Digest::MD5;
+ 	$ct->reset ();
+ 	$ct->add ($hdr, $self->{'authenticator'}, $self->{'attributes'}, $self->{'secret'});
+ 
+@@ -201,7 +201,7 @@
+ 
+ 	$self->set_error;
+ 
+-	$ct = new MD5;
++	$ct = new Digest::MD5;
+ 	$ct->reset ();
+ 	# the following could be improved a lot
+ 	$ct->add (sprintf("%08x%04x", time, $$), $self->{'attributes'});
+@@ -218,7 +218,7 @@
+ 	# this only works for passwords <= 16 chars, anyone use longer passwords?
+ 	$pwd .= "\0" x (16 - length($pwd) % 16);
+ 	@pwdp = unpack('C16', pack('a16', $pwd));
+-	$ct = new MD5;
++	$ct = new Digest::MD5;
+ 	$ct->reset ();
+ 	$ct->add ($self->{'secret'}, $self->{'authenticator'});
+ 	@xor = unpack('C16', $ct->digest());
+--- RadiusPerl-0.05/Makefile.PL~	Mon Mar 31 21:22:05 1997
++++ RadiusPerl-0.05/Makefile.PL	Sun May 20 15:28:39 2001
+@@ -5,6 +5,6 @@
+     'NAME'			=> 'Authen::Radius',
+     'DISTNAME'		=> 'RadiusPerl',
+     'VERSION_FROM' 	=> 'Authen/Radius.pm', # finds $VERSION
+-	'PREREQ_PM' 	=> { MD5 => 1.7, IO => 1.12 },
++	'PREREQ_PM' 	=> { Digest::MD5 => 1.7, IO => 1.12 },
+ 	'dist'			=> { COMPRESS => 'gzip', SUFFIX => 'gz' },
+ );
