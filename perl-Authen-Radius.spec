@@ -8,7 +8,7 @@ Summary(pl):	Modu³ perla Authen-TacacsPlus
 Name:		perl-Authen-Radius
 Version:	0.11
 Release:	1
-License:	Perl Artistic License
+License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Authen/RadiusPerl-%{version}.tar.gz
 # Source0-md5:	5c320a936d5d3819220f2d639db007db
