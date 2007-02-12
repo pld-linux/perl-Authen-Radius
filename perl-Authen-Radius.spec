@@ -6,7 +6,7 @@
 %define		pdir	Authen
 %define		pnam	Radius
 Summary:	Authen::Radius - provide simple RADIUS client facilities
-Summary(pl):	Authen::Radius - udostêpnienie funkcji klienta RADIUS
+Summary(pl.UTF-8):   Authen::Radius - udostÄ™pnienie funkcji klienta RADIUS
 Name:		perl-%{pdir}-%{pnam}
 Version:	0.12
 Release:	1
@@ -25,8 +25,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Authen::Radius is Perl module for authentication using RADIUS server.
 
-%description -l pl
-Authen::Radius jest modu³em Perla do autentykacji przy pomocy serwera
+%description -l pl.UTF-8
+Authen::Radius jest moduÅ‚em Perla do autentykacji przy pomocy serwera
 RADIUS.
 
 %prep
