@@ -6,7 +6,7 @@
 %define		pdir	Authen
 %define		pnam	Radius
 Summary:	Authen::Radius - provide simple RADIUS client facilities
-Summary(pl.UTF-8):   Authen::Radius - udostępnienie funkcji klienta RADIUS
+Summary(pl.UTF-8):	Authen::Radius - udostępnienie funkcji klienta RADIUS
 Name:		perl-%{pdir}-%{pnam}
 Version:	0.12
 Release:	1
