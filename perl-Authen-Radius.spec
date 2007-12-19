@@ -8,12 +8,12 @@
 Summary:	Authen::Radius - provide simple RADIUS client facilities
 Summary(pl.UTF-8):	Authen::Radius - udostępnienie funkcji klienta RADIUS
 Name:		perl-%{pdir}-%{pnam}
-Version:	0.12
+Version:	0.13
 Release:	1
 License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Authen/RadiusPerl-%{version}.tar.gz
-# Source0-md5:	8427f931a4e0e689ecf8ddf30e5a0ea7
+# Source0-md5:	bbe01758d4af1ccbdcb83fe061eb2799
 # for dependency resolving
 BuildRequires:	perl-Data-HexDump
 BuildRequires:	perl-Digest-MD5
