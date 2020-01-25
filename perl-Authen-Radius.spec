@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests	# perform "make test" (requires Radius server availability)
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Authen
 %define		pnam	Radius
 Summary:	Authen::Radius - provide simple RADIUS client facilities
